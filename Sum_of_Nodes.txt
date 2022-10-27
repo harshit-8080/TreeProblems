@@ -1,0 +1,11 @@
+public static int getSum(BinaryTreeNode<Integer> root) {
+		
+        if(root == null){
+            return 0;
+        }
+        
+        int lSum = getSum(root.left);
+        int rSum = getSum(root.right);
+        
+        return root.data + lSum + rSum;
+}

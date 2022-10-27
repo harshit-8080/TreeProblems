@@ -1,0 +1,14 @@
+public static int countNodesGreaterThanX(BinaryTreeNode<Integer> root, int x) {
+		
+        if(root == null){
+            return 0;
+        }
+        
+        int leftNode = countNodesGreaterThanX(root.left,x);
+        int rightNode = countNodesGreaterThanX(root.right,x);
+        
+        if(root.data > x){
+			return 1 + leftNode + rightNode;
+        }
+        return leftNode + rightNode;
+}
