@@ -1,0 +1,24 @@
+ArrayList<Integer> arr = new ArrayList<>();
+
+void fun(Node root, int k){
+        
+        if(root == null || k < 0){
+              return;
+          }
+          
+      
+          if(k == 0){
+              arr.add(root.data);
+              
+          }
+          Kdistance(root.left,k-1);
+          Kdistance(root.right,k-1);
+          
+}
+
+ ArrayList<Integer> Kdistance(Node root, int k){
+         
+          fun(root,k);
+          return arr;
+          
+}
