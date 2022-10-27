@@ -1,0 +1,13 @@
+public static int height(BinaryTreeNode<Integer> root) {
+		
+        if(root == null){
+            return 0;
+        }
+        
+        int lh = height(root.left);
+        int rh = height(root.right);
+        
+        int maxOfLeftOrRight = Math.max(lh,rh);
+        
+        return 1 + maxOfLeftOrRight;
+}

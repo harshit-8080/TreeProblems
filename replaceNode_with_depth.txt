@@ -1,0 +1,18 @@
+public static void fun(BinaryTreeNode<Integer> root,int height) {  
+        
+        if(root == null){
+            return;
+        }
+        
+        root.data = height;
+        
+        fun(root.left,height+1);
+        fun(root.right,height+1);
+        
+	}
+
+public static void changeToDepthTree(BinaryTreeNode<Integer> root) {
+	    
+       fun(root,0);
+          
+	}
