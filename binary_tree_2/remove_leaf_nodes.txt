@@ -1,0 +1,19 @@
+public static BinaryTreeNode<Integer> removeLeaf(BinaryTreeNode<Integer> root) {
+
+    if(root == null){
+        return null;
+    }
+
+    if(root.left == null && root.right == null){
+        return null;
+    }
+
+    BinaryTreeNode<Integer> newLeftRoot = removeLeaf(root.left);
+    BinaryTreeNode<Integer> newRightRoot = removeLeaf(root.right);
+
+    root.left = newLeftRoot;
+    root.right = newRightRoot;
+
+    return root;
+
+}
