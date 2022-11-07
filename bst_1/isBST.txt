@@ -1,0 +1,55 @@
+/*
+	
+	Following is the structure used to represent the Binary Tree Node
+
+	class BinaryTreeNode<T> {
+		T data;
+		BinaryTreeNode<T> left;
+		BinaryTreeNode<T> right;
+
+		public BinaryTreeNode(T data) {
+			this.data = data;
+			this.left = null;
+			this.right = null;
+		}
+	}
+
+ */
+
+public class Solution {
+
+	static BinaryTreeNode<Integer> prevNode; 
+
+	public static boolean isBST(BinaryTreeNode<Integer> root) {
+
+			if(root == null){
+				return true;
+			}
+
+			boolean lr = isBST(root.left);
+
+			if(prevNode == null){
+				prevNode = root;
+			}
+			else{
+				if(prevNode.data > root.data){
+					return false;
+				}
+				else{
+					prevNode = root;
+				}
+			}
+
+	
+			boolean rr = isBST(root.right);
+
+			if(lr&&rr){
+				return true;
+			}
+			else{
+				return false;
+			}
+
+	}
+
+}
